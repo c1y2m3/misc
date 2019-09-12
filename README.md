@@ -8,3 +8,4 @@
 | GetTvPass | 通过遍历读取控件获取teamview账号密码 |
 | mssql_oacreate_exploit | 利用sp_oacreate实现命令交互  |
 | Pywinrm_Connect | 基于winrm服务进行win权限维持 |
+| rdp_connect_history | 获得系统中所有用户的远程桌面连接历史记录 |
