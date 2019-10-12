@@ -6,7 +6,6 @@ import getpass
 import subprocess
 import os
 
-
 key = r"Software\Microsoft\Terminal Server Client\Servers"
 open_key = _winreg.OpenKey(_winreg.HKEY_CURRENT_USER, key)
 countkey = _winreg.QueryInfoKey(open_key)[0]
@@ -18,8 +17,7 @@ def ListLogged_inUsers():
     try:
         for i in range(int(countkey)):
             db = _winreg.EnumKey(open_key, i)  # 获取子键名
-            servers = _winreg.OpenKey(
-                _winreg.HKEY_CURRENT_USER, key + "\\" + db)
+            servers = _winreg.OpenKey(_winreg.HKEY_CURRENT_USER, key + "\\" + db)
             name, value, type = _winreg.EnumValue(servers, K)
             values['current_user'] = User
             values['Server'] = db
@@ -30,15 +28,6 @@ def ListLogged_inUsers():
         print "No RDP Connections History"
 
 # ListAllUsers RDP Connections History
-
-
-def powershell(cmd):
-    arg = [r"powershell.exe", cmd]
-    ps = subprocess.Popen(arg, stdout=subprocess.PIPE)
-    user = ps.stdout.read()
-    Write = user.split('\n')
-    return Write
-
 def AllUser():
 
     cmd = "$AllUser = Get-WmiObject -Class Win32_UserAccount;" \
@@ -49,12 +38,19 @@ def AllUser():
         "foreach($User in $AllUser)" \
         "{Write-Host $User.SID};"
 
-    user_name = powershell(cmd)
-    sid = powershell(cmder)
+    arg = [r"powershell.exe", cmd]
+    ps = subprocess.Popen(arg, stdout=subprocess.PIPE)
+    dc = ps.stdout.read()
+    dc = dc.split('\n')
+
+    args = [r"powershell.exe", cmder, ]
+    p = subprocess.Popen(args, stdout=subprocess.PIPE)
+    dt = p.stdout.read()
+    sid = dt.split('\n')
 
     num = {}
-    for y in range(len(user_name)):
-        num[user_name[y]] = sid[y]
+    for y in range(len(dc)):
+        num[dc[y]] = sid[y]
 
     for id in sid:
         try:
@@ -66,23 +62,21 @@ def AllUser():
                     _winreg.HKEY_USERS,
                     id + os.sep + key + "\\" + dbs)
                 name, value, type = _winreg.EnumValue(server, K)
-            for www in num:
-                if num[www] == id:
-                    print "User:" + www
-                    print "SID :" + id
-                    print name + ":" + value + ":" + dbs
+                for www in num:
+                    if num[www] == id:
+                        # print "User:" + www
+                        # print "SID :" + id
+                        print name + ":" + value + ":" + dbs + ":" + www
         except WindowsError:
             pass
-
 
 def main():
 
     print "ListLogged-inUsers RDP Connections History"
     ListLogged_inUsers()
-    print "-" * 100
     print "ListAllUsers RDP Connections History"
+    print "-" * 100
     AllUser()
 
 
-if __name__ == '__main__':
-    main()
+main()
