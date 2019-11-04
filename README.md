@@ -10,3 +10,5 @@
 | winrm_attack | 基于winrm服务进行win权限维持 |
 | Getrdp_history | 获得系统中所有用户的远程桌面连接历史记录 |
 | _ssrf_exploit | 基于ceye接口批量检测discuz_ssrf漏洞 |
+| crack_jboss_console | 基于jmx-console/login.seam接口爆破Jboss密码 |
+
