@@ -47,7 +47,7 @@ class ThreadUrl(threading.Thread):
                 'p@ssw0rd',
                 '123qwe!@#$',
                 '123qwe!@#',
-                'abc123',
+                #'abc123',
                 'abc123456',
                 'root#123',
                 'administrator',
