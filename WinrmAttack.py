@@ -3,7 +3,7 @@ import winrm as pywinrm
 import argparse
 
 
-parse = argparse.ArgumentParser(description="WinRM Shell")
+parse = argparse.ArgumentParser(description="WinRM Forward Shell")
 parse.add_argument('-H', '--hostname', type=str, help="RHOST")
 parse.add_argument('-u', '--username', type=str, help="USERNAME")
 parse.add_argument('-p', '--password', type=str, help="PASSWORD",)
