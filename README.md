@@ -11,5 +11,5 @@
 | GetrdpHistory | 获得系统中所有用户的远程桌面连接历史记录 |
 | SSRFExploit | 基于ceye接口批量检测discuz_ssrf漏洞 |
 | Crack_Jboss_burst | 基于jmx-console/login.seam接口爆破Jboss密码 |
-| IIS_backdoor | 利用HTTP.sys官方接口，向该驱动注册url前缀，使用C++实现端口复用后门功能 |
+| IIS_backdoor | 利用HTTP.sys官方接口，向该驱动注册url后缀，使用C++实现端口复用后门功能 |
 
