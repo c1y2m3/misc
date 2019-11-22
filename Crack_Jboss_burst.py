@@ -85,16 +85,17 @@ class ThreadUrl(threading.Thread):
                     for password in PASSWORD_DIC:
                         s = requests.session()
                         response = s.get(login_url,timeout=3.5)
-                        javalue = re.findall(r'name="javax.faces.ViewState" id="javax.faces.ViewState" value="(.*?)"', response .content)
-                        key_hash = urllib.quote(javalue[0])
-                        post = "login_form=login_form&login_form:name=%s&login_form:password=%s&login_form:submit=Login&javax.faces.ViewState=%s" % (
-                            user, password, key_hash)
-                        headers = {'Content-Type':'application/x-www-form-urlencoded'}
-                        result = s.post(login_url,data=post,timeout=5,headers=headers)
-                        if r"Welcome {}".format(user) in result.content:
-                            auth = user + ":" + password
-                            weak_passwd.append(auth)
-                            break
+                        if response.status_code == 200:
+                            javalue = re.findall(r'name="javax.faces.ViewState" id="javax.faces.ViewState" value="(.*?)"', response .content)
+                            key_hash = urllib.quote(javalue[0])
+                            post = "login_form=login_form&login_form:name=%s&login_form:password=%s&login_form:submit=Login&javax.faces.ViewState=%s" % (
+                                user, password, key_hash)
+                            headers = {'Content-Type':'application/x-www-form-urlencoded'}
+                            result = s.post(login_url,data=post,timeout=5,headers=headers)
+                            if r"Welcome {}".format(user) in result.content:
+                                auth = user + ":" + password
+                                weak_passwd.append(auth)
+                                break
             self.queue.task_done()
 
 
