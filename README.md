@@ -12,4 +12,5 @@
 | SSRFExploit | 基于ceye接口批量检测discuz_ssrf漏洞 |
 | Crack_Jboss_burst | 基于jmx-console/login.seam接口爆破Jboss密码 |
 | IIS_backdoor | 利用HTTP.sys官方接口，向该驱动注册url后缀，使用C++实现端口复用后门功能 |
+| OutLook_WebAPP_Brute | Microsoft Outlook WebAPP  基于协商过程中提取内部Domain name，以及多线程暴力破解 |
 
