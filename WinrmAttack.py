@@ -1,4 +1,6 @@
-#!/usr/bin/python2
+#! /usr/bin/env python2.7
+# -*- coding:UTF-8 -*-
+
 import winrm as pywinrm
 import argparse
 
@@ -26,13 +28,15 @@ class Connection:
         self.domain = credentials.domain
 
     def session(self, args):
+        '''
+         windows 2008上面是LM-HASH:NTLM-HASH的方式，需要修改源代码，去掉上面的一堆0加上冒号
+         windows 2012以及之后只能抓到NTLM的Hash，直接使用即可
+        :param args:
+        :return:
+        '''
         conn = pywinrm.Session(
             self.hostname,
-            auth=(
-                '{}\\{}'.format(
-                    self.domain,
-                    self.username),
-                self.password),
+            auth=('{}\\{}'.format(self.domain,self.username), '00000000000000000000000000000000:'+ self.password),
             transport='ntlm',
             server_cert_validation='ignore')
         try:
@@ -49,6 +53,7 @@ domain = args.domain
 if not args.hostname:
     parse.print_help()
     exit()
+
 
 print('Connecting to: ' + (hostname))
 print(r'Using credentials: %s\%s:%s' % ((domain), (username), (password)))
