@@ -1,3 +1,4 @@
+# 代码参考: https://lianzhang.org/index.php/archives/8/
 #! /usr/bin/env python2.7
 # -*- coding:UTF-8 -*-
 
@@ -29,7 +30,7 @@ class Connection:
 
     def session(self, args):
         '''
-         windows 2008上面是LM-HASH:NTLM-HASH的方式，需要修改源代码，去掉上面的一堆0加上冒号
+         windows 2008是LM-HASH:NTLM-HASH的方式
          windows 2012以及之后只能抓到NTLM的Hash，直接使用即可
         :param args:
         :return:
