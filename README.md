@@ -14,4 +14,5 @@
 | IIS_backdoor | 利用HTTP.sys官方接口，向该驱动注册url后缀，使用C++实现端口复用后门功能 |
 | OutLook_WebAPP_Brute | Microsoft Outlook WebAPP  基于协商过程中提取内部Domain name，以及多线程暴力破解 |
 | AddUser | 基于winAPI NetUserAdd添加用户并通过NetLocalGroupAddMembers加入administrator管理组 |
+| redisexpolit | 自动化通过 SSH public key 以及Cron task 攻击 redis  |
 
