@@ -57,8 +57,6 @@ class exploit:
             self.print_success(self.sshsucess)
         except Exception as e:
             self.print_error(self.error)
-        finally:
-            connect.close()
 
     def croncheck(self):
         try:
@@ -74,8 +72,7 @@ class exploit:
             self.print_success(self.cronsuess)
         except:
             self.print_error(self.error)
-        finally:
-            connect.close()
+
 
 
 if __name__ == '__main__':

@@ -1,0 +1,4 @@
+﻿  WindowsProject4.cpp
+c:\users\thinkpad\source\repos\windowsproject4\windowsproject4\windowsproject4.cpp(301): warning C4129: “m”: 不可识别的字符转义序列
+c:\users\thinkpad\source\repos\windowsproject4\windowsproject4\windowsproject4.cpp(221): warning C4172: 返回局部变量或临时变量的地址: strText
+  WindowsProject4.vcxproj -> C:\Users\ThinkPad\source\repos\WindowsProject4\Debug\WindowsProject4.exe

@@ -1,0 +1,5 @@
+﻿  WindowsProject4.cpp
+c:\users\thinkpad\desktop\my\myscript\misc\iis_backdoor\windowsproject4\windowsproject4.cpp(290): warning C4474: wprintf: 格式字符串中传递的参数太多
+  c:\users\thinkpad\desktop\my\myscript\misc\iis_backdoor\windowsproject4\windowsproject4.cpp(290): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+c:\users\thinkpad\desktop\my\myscript\misc\iis_backdoor\windowsproject4\windowsproject4.cpp(198): warning C4172: 返回局部变量或临时变量的地址: strText
+  WindowsProject4.vcxproj -> C:\Users\ThinkPad\Desktop\My\MyScript\misc\IIS_backdoor\x64\Debug\WindowsProject4.exe

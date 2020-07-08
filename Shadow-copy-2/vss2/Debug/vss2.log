@@ -1,0 +1,22 @@
+﻿Build started 12/6/2012 7:25:23 PM.
+     1>Project "D:\vss2\vss2\vss2.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\vss2.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\win7\Documents\Visual Studio 2010\Projects\vss2\inc\win2003" /ZI /nologo /W3 /WX- /Od /Oy- /D _ATL_NO_DEBUG_CRT /D _WIN32_WINNT=0x500 /D VSS_SERVER /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>d:\vss2\vss2\main.cpp(23): error C2440: 'initializing' : cannot convert from 'const char [11]' to 'WCHAR [260]'
+                 There is no context in which this conversion is possible
+     1>d:\vss2\vss2\main.cpp(24): error C2440: 'initializing' : cannot convert from 'const char [14]' to 'WCHAR [260]'
+                 There is no context in which this conversion is possible
+     1>d:\vss2\vss2\main.cpp(106): error C2664: 'wcscpy' : cannot convert parameter 1 from 'TCHAR [260]' to 'wchar_t *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\vss2\vss2\main.cpp(107): error C2664: 'wcscat' : cannot convert parameter 1 from 'TCHAR [260]' to 'wchar_t *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>d:\vss2\vss2\main.cpp(112): error C2664: 'CopyFileA' : cannot convert parameter 2 from 'WCHAR [260]' to 'LPCSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>Done Building Project "D:\vss2\vss2\vss2.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.92

@@ -117,7 +117,7 @@ def brust(host):
 
 if __name__ == '__main__':
 
-    hostinput = 'mail.sinopec.com'
+    hostinput = 'email.htsc.com'
     print '[+] Attempting to harvest internal domain: ' + ntmchallenge(hostinput)
     # print '[+] Identifying exposed Exchange endpoints for potential spraying : '
     for url in oauth:
